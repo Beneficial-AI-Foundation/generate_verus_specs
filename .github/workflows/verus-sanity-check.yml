@@ -36,11 +36,21 @@ jobs:
           # Get list of changed files based on event type
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             # For PRs, compare against the base branch
-            git diff --name-only origin/${{ github.base_ref }}...HEAD > changed_files.txt
+            git diff --name-only origin/${{ github.base_ref }}..HEAD > changed_files.txt
           else
             # For pushes, compare against the previous commit
             if [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
-              git diff --name-only ${{ github.event.before }}...HEAD > changed_files.txt
+              # Check if the before commit exists in the repository
+              if git cat-file -e "${{ github.event.before }}" 2>/dev/null; then
+                git diff --name-only ${{ github.event.before }}..HEAD > changed_files.txt
+              else
+                # If before commit doesn't exist, compare with HEAD~1 or get all files
+                if git rev-parse HEAD~1 >/dev/null 2>&1; then
+                  git diff --name-only HEAD~1..HEAD > changed_files.txt
+                else
+                  git ls-files > changed_files.txt
+                fi
+              fi
             else
               # For initial commits or when before is null, get all files
               git ls-files > changed_files.txt
