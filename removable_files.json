@@ -1,0 +1,1332 @@
+{
+  "total_files_analyzed": 986,
+  "threshold": 0.95,
+  "duplicate_groups": 109,
+  "removable_files": 331,
+  "mappings": [
+    {
+      "remove": "HumanEval-RustBench/SubBench/008-sum_product.rs",
+      "keep": "HumanEval-RustBench/008-sum_product.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s42if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s12if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s32if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s22if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s4lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s5lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/conda.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/condg.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s3lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s2lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s1lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/brs2.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/brs4.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ifncomp.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/brs5.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/brs3.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ifcomp.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/brs1.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/ms3.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/ms4.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s5if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/ms5.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s3if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s4if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s2if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/ms2.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/s1if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/ms1.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/condg.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/condg.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/condm.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ifeqn2.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/nsqm-if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ifeqn3.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ifeqn4.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ifeqn1.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/condn.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/sqm-if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ifeqn5.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/condm.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/condn.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/condn.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/condm.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s52if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s42if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s12if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s22if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s32if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s4lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s3lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s5lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/conda.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s2lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/condg.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s1lif.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/brs4.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/brs3.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/brs5.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/brs2.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s3if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/brs1.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/ms5.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s5if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s2if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s4if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/ms3.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/ms4.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/ms2.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/s1if.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/ms1.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/condm.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/condn.rs",
+      "keep": "autoverus/Diffy/verified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/sina5.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/res1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/sina4.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/sina3.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/res1o.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ss2.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/sina2.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/sina5.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/sina5.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ssina.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/sina3.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/sina4.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/sina4.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/mods.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/sina3.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/indp3.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/pcomp.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ncomp.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/sina2.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/verified/sina1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/sina2.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/indp2.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/indp1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/indp4.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/sina1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/eqn1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/eqn2.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/eqn4.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/sqm.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/eqn5.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/nsqm.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/sina1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/eqn3.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/modn.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/modp.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/res2o.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/sina5.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/res1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/sina4.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/sina3.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/res1o.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/sina2.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/SVComp-Array-fpi-nonl/sina1.rs",
+      "keep": "autoverus/Diffy/verified/res2o.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/choose_odd.rs",
+      "keep": "autoverus/Misc/verified/choose_odd.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/len_intersect.rs",
+      "keep": "autoverus/Misc/verified/len_intersect.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/bubble_v1.rs",
+      "keep": "autoverus/Misc/verified/bubble_v1.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/filter_v2.rs",
+      "keep": "autoverus/Misc/verified/filter_v2.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/arg_free.rs",
+      "keep": "autoverus/Misc/verified/arg_free.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/filter.rs",
+      "keep": "autoverus/Misc/verified/filter.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/bubble_v2.rs",
+      "keep": "autoverus/Misc/verified/bubble_v2.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/max_index.rs",
+      "keep": "autoverus/Misc/verified/max_index.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/max_index.rs",
+      "keep": "autoverus/Misc/verified/max_index.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/filter_weak.rs",
+      "keep": "autoverus/Misc/verified/filter_weak.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/filter_weak.rs",
+      "keep": "autoverus/Misc/verified/filter_weak.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/simple_nested.rs",
+      "keep": "autoverus/Misc/verified/simple_nested.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/simple_nested.rs",
+      "keep": "autoverus/Misc/verified/simple_nested.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/linearsearch.rs",
+      "keep": "autoverus/Misc/verified/linearsearch.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/linearsearch.rs",
+      "keep": "autoverus/Misc/verified/linearsearch.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/map.rs",
+      "keep": "autoverus/Misc/verified/map.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/map.rs",
+      "keep": "autoverus/Misc/verified/map.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/remove_all_greater_v2.rs",
+      "keep": "autoverus/Misc/verified/remove_all_greater_v2.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/tail_triangle.rs",
+      "keep": "autoverus/Misc/verified/tail_triangle.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/basic_nonlinear.rs",
+      "keep": "autoverus/Misc/verified/basic_nonlinear.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/remove_all_greater.rs",
+      "keep": "autoverus/Misc/verified/remove_all_greater.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/trigger.rs",
+      "keep": "autoverus/Misc/verified/trigger.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/findmax.rs",
+      "keep": "autoverus/Misc/verified/findmax.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/findmax.rs",
+      "keep": "autoverus/Misc/verified/findmax.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/conditional_average.rs",
+      "keep": "autoverus/Misc/verified/conditional_average.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/conditional_average.rs",
+      "keep": "autoverus/Misc/verified/conditional_average.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/cell_2_sum.rs",
+      "keep": "autoverus/Misc/verified/cell_2_sum.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/binary_search.rs",
+      "keep": "autoverus/Misc/verified/binary_search.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/binary_search.rs",
+      "keep": "autoverus/Misc/verified/binary_search.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/Misc/binary_search.rs",
+      "keep": "autoverus/Misc/verified/binary_search.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_733.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_733.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP_no_bodies/task_id_733.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_733.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP_no_bodies/task_id_282.rs",
+      "keep": "VerusProofSynthesisBench/MBPP_no_bodies/task_id_273.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_414.rs",
+      "keep": "autoverus/MBPP/verified/task_id_414.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_804.rs",
+      "keep": "autoverus/MBPP/verified/task_id_804.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_576.rs",
+      "keep": "autoverus/MBPP/verified/task_id_576.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_161.rs",
+      "keep": "autoverus/MBPP/verified/task_id_161.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_618.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_618.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_261.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_261.rs"
+    },
+    {
+      "remove": "autoverus/MBPP/unverified/task_id_262.rs",
+      "keep": "autoverus/MBPP/verified/task_id_262.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_262.rs",
+      "keep": "autoverus/MBPP/verified/task_id_262.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_251.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_251.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_760.rs",
+      "keep": "autoverus/MBPP/verified/task_id_760.rs"
+    },
+    {
+      "remove": "autoverus/MBPP/unverified/task_id_95.rs",
+      "keep": "autoverus/MBPP/verified/task_id_95.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_95.rs",
+      "keep": "autoverus/MBPP/verified/task_id_95.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_433.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_433.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_62.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_62.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_307.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_307.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_436.rs",
+      "keep": "autoverus/MBPP/verified/task_id_436.rs"
+    },
+    {
+      "remove": "autoverus/MBPP/unverified/task_id_284.rs",
+      "keep": "autoverus/MBPP/verified/task_id_284.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_284.rs",
+      "keep": "autoverus/MBPP/verified/task_id_284.rs"
+    },
+    {
+      "remove": "autoverus/MBPP/unverified/task_id_145.rs",
+      "keep": "autoverus/MBPP/verified/task_id_145.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_145.rs",
+      "keep": "autoverus/MBPP/verified/task_id_145.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_769.rs",
+      "keep": "VerusProofSynthesisBench/MBPP/task_id_579.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_476.rs",
+      "keep": "autoverus/MBPP/verified/task_id_476.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_578.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_578.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_567.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_567.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_728.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_728.rs"
+    },
+    {
+      "remove": "autoverus/MBPP/unverified/task_id_472.rs",
+      "keep": "autoverus/MBPP/verified/task_id_472.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_472.rs",
+      "keep": "autoverus/MBPP/verified/task_id_472.rs"
+    },
+    {
+      "remove": "autoverus/MBPP/unverified/task_id_273.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_282.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_282.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_282.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_273.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_282.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_586.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_586.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_431.rs",
+      "keep": "autoverus/MBPP/verified/task_id_431.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_399.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_399.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_809.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_809.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_644.rs",
+      "keep": "autoverus/MBPP/verified/task_id_644.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_616.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_616.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_69.rs",
+      "keep": "autoverus/MBPP/verified/task_id_69.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_790.rs",
+      "keep": "autoverus/MBPP/verified/task_id_790.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_445.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_445.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_8.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_8.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_70.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_70.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_576_v2.rs",
+      "keep": "autoverus/MBPP/verified/task_id_576_v2.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_447.rs",
+      "keep": "autoverus/MBPP/unverified/task_id_447.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_460.rs",
+      "keep": "autoverus/MBPP/verified/task_id_460.rs"
+    },
+    {
+      "remove": "VerusProofSynthesisBench/MBPP/task_id_775.rs",
+      "keep": "autoverus/MBPP/verified/task_id_775.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/array_copy.rs",
+      "keep": "RustBench/ground_truth/array_copy.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/array_copy.rs",
+      "keep": "RustBench/ground_truth/array_copy.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/replace_chars.rs",
+      "keep": "RustBench/ground_truth/replace_chars.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/replace_chars.rs",
+      "keep": "RustBench/ground_truth/replace_chars.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/barrier.rs",
+      "keep": "RustBench/ground_truth/barrier.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/has_close_elements.rs",
+      "keep": "RustBench/ground_truth/has_close_elements.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/max_array.rs",
+      "keep": "RustBench/ground_truth/max_array.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/max_array.rs",
+      "keep": "RustBench/ground_truth/max_array.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/remove_element.rs",
+      "keep": "RustBench/ground_truth/remove_element.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/remove_element.rs",
+      "keep": "RustBench/ground_truth/remove_element.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/remove_element.rs",
+      "keep": "RustBench/ground_truth/remove_element.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/smallest_list_length.rs",
+      "keep": "RustBench/ground_truth/smallest_list_length.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/smallest_list_length.rs",
+      "keep": "RustBench/ground_truth/smallest_list_length.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/smallest_list_length.rs",
+      "keep": "RustBench/ground_truth/smallest_list_length.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/abs.rs",
+      "keep": "RustBench/ground_truth/abs.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/array_product.rs",
+      "keep": "RustBench/ground_truth/array_product.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/array_product.rs",
+      "keep": "RustBench/ground_truth/array_product.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/index_wise_addition.rs",
+      "keep": "RustBench/ground_truth/index_wise_addition.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/unique.rs",
+      "keep": "RustBench/ground_truth/unique.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/unique_better.rs",
+      "keep": "RustBench/ground_truth/unique.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/unique_with_hint.rs",
+      "keep": "RustBench/ground_truth/unique.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/unique.rs",
+      "keep": "RustBench/ground_truth/unique.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/unique_no_hints.rs",
+      "keep": "RustBench/ground_truth/unique.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/is_sorted.rs",
+      "keep": "RustBench/ground_truth/is_sorted.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/is_sorted.rs",
+      "keep": "RustBench/ground_truth/is_sorted.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/rolling_max.rs",
+      "keep": "RustBench/ground_truth/rolling_max.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/max_dafny_lsp.rs",
+      "keep": "RustBench/ground_truth/max_dafny_lsp.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/has_only_one_distinct_element.rs",
+      "keep": "RustBench/ground_truth/has_only_one_distinct_element.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/has_only_one_distinct_element.rs",
+      "keep": "RustBench/ground_truth/has_only_one_distinct_element.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/arithmetic_weird.rs",
+      "keep": "RustBench/ground_truth/arithmetic_weird.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/remove_elements.rs",
+      "keep": "RustBench/ground_truth/remove_elements.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/remove_elements.rs",
+      "keep": "RustBench/ground_truth/remove_elements.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/replace.rs",
+      "keep": "RustBench/ground_truth/replace.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/replace.rs",
+      "keep": "RustBench/ground_truth/replace.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/reverse.rs",
+      "keep": "RustBench/ground_truth/reverse.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/reverse.rs",
+      "keep": "RustBench/ground_truth/reverse.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/two_sum.rs",
+      "keep": "RustBench/ground_truth/two_sum.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/two_sum.rs",
+      "keep": "RustBench/ground_truth/two_sum.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/largest_prime_factor.rs",
+      "keep": "RustBench/ground_truth/largest_prime_factor.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/remove_duplicates.rs",
+      "keep": "RustBench/ground_truth/remove_duplicates.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/remove_duplicates.rs",
+      "keep": "RustBench/ground_truth/remove_duplicates.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/remove_duplicates.rs",
+      "keep": "RustBench/ground_truth/remove_duplicates.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/binary_search_recursive.rs",
+      "keep": "RustBench/ground_truth/binary_search_recursive.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/is_non_prime.rs",
+      "keep": "RustBench/ground_truth/is_non_prime.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/is_non_prime.rs",
+      "keep": "RustBench/ground_truth/is_non_prime.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/two_way_sort.rs",
+      "keep": "RustBench/ground_truth/two_way_sort.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/two_way_sort.rs",
+      "keep": "RustBench/ground_truth/two_way_sort.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/intersperse.rs",
+      "keep": "RustBench/ground_truth/intersperse.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/intersperse.rs",
+      "keep": "RustBench/ground_truth/intersperse.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/last_position.rs",
+      "keep": "RustBench/ground_truth/last_position.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/last_position.rs",
+      "keep": "RustBench/ground_truth/last_position.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/smallest_missing_number.rs",
+      "keep": "RustBench/ground_truth/smallest_missing_number.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/smallest_missing_number.rs",
+      "keep": "RustBench/ground_truth/smallest_missing_number.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/cubes.rs",
+      "keep": "RustBench/ground_truth/cubes.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/cubes.rs",
+      "keep": "RustBench/ground_truth/cubes.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/array_concat.rs",
+      "keep": "RustBench/ground_truth/array_concat.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/array_concat.rs",
+      "keep": "RustBench/ground_truth/array_concat.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/string_xor.rs",
+      "keep": "RustBench/ground_truth/string_xor.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/string_xor.rs",
+      "keep": "RustBench/ground_truth/string_xor.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/string_xor.rs",
+      "keep": "RustBench/ground_truth/string_xor.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/integer_square_root.rs",
+      "keep": "RustBench/ground_truth/integer_square_root.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/unique_better.rs",
+      "keep": "RustBench/ground_truth/unique_better.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/array_append.rs",
+      "keep": "RustBench/ground_truth/array_append.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/array_append.rs",
+      "keep": "RustBench/ground_truth/array_append.rs"
+    },
+    {
+      "remove": "HumanEval-RustBench/additional/binary_search.rs",
+      "keep": "RustBench/ground_truth/binary_search.rs"
+    },
+    {
+      "remove": "RustBench/preconditions_removed/binary_search.rs",
+      "keep": "RustBench/ground_truth/binary_search.rs"
+    },
+    {
+      "remove": "RustBench/invariants_removed/binary_search.rs",
+      "keep": "RustBench/ground_truth/binary_search.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s42if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s52if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s12if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s32if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s42if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s22if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s12if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s32if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s22if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s5lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s4lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/conda.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s2lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s5lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s3lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s4lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s1lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/conda.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s1lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s2lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s3lif.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/brs2.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/brs4.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/brs5.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/brs3.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/brs3.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/brs2.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/brs5.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/brs4.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/brs1.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/brs1.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/ms3.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/ms4.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s3if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s5if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/ms5.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ms3.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s1if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/ms2.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ms5.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ms2.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s5if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ms1.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s3if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s1if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ms4.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s4if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/ms1.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/s2if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s2if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/s4if.rs",
+      "keep": "autoverus/Diffy/unverified/s52if.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/res2.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/res2o.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/res2.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/indp5.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ss3.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/res1.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/Diffy/unverified/res1o.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/res1.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ss4.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/res1o.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/SVComp-Array-fpi/unverified/ss1.rs",
+      "keep": "autoverus/Diffy/unverified/res2o.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/array_sum_strong.rs",
+      "keep": "autoverus/CloverBench/verified/array_sum_strong.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/array_product_strong.rs",
+      "keep": "autoverus/CloverBench/verified/array_product_strong.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/array_concat_strong.rs",
+      "keep": "autoverus/CloverBench/verified/array_concat_strong.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/array_copy_strong.rs",
+      "keep": "autoverus/CloverBench/verified/array_copy_strong.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/two_sum.rs",
+      "keep": "autoverus/CloverBench/verified/two_sum.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/array_append_strong.rs",
+      "keep": "autoverus/CloverBench/verified/array_append_strong.rs"
+    },
+    {
+      "remove": "autoverus/CloverBench/unverified/linear_search2.rs",
+      "keep": "autoverus/CloverBench/verified/linear_search2.rs"
+    },
+    {
+      "remove": "autoverus/Misc/unverified/havoc_inline_post.rs",
+      "keep": "autoverus/Misc/verified/havoc_inline_post.rs"
+    }
+  ]
+}
