@@ -1,0 +1,141 @@
+# Failed Verus Compilation Files
+
+This directory contains 121 files that failed to compile with `verus --no-verify`.
+
+## Failure Categories:
+
+1. **Platform-specific imports**: Files using Windows-specific modules on Linux
+2. **Missing return statements**: Functions with empty bodies or incorrect default values
+3. **Syntax errors**: Return statements in wrong contexts
+4. **Type resolution errors**: Missing or undefined types
+5. **Complex return types**: Tuples, references, and custom types not handled correctly
+
+## Files:
+- dafnybench/Clover_linear_search3/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Generated_Code_Count/verus_code.rs
+- dafnybench/Clover_two_sum/verus_code.rs
+- dafnybench/Dafny_Programs_tmp_tmp99966ew4_binary_search/verus_code.rs
+- dafnybench/AssertivePrograming_tmp_tmpwf43uz0e_DivMode_Unary/verus_code.rs
+- dafnybench/Clover_all_digits/verus_code.rs
+- dafnybench/Dafny_tmp_tmpmvs2dmry_SlowMax/verus_code.rs
+- dafnybench/Clover_modify_2d_array/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week8_12_a3_search_findPositionOfIndex/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_50_examples_38/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Generated_Code_Mult/verus_code.rs
+- dafnybench/Clover_swap_in_array/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_C_convert_examples_06_n/verus_code.rs
+- dafnybench/Dafny_tmp_tmpv_d3qi10_3_cumsum/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week1_7_MaxSum/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_detailed_examples_SelectionSort/verus_code.rs
+- dafnybench/Dafny-Grind75_tmp_tmpsxfz3i4r_problems_twoSum/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_AI_agent_verify_examples_Cube/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Test_Cases_solved_1_select/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_error_data_completion_11/verus_code.rs
+- dafnybench/CO3408-Advanced-Software-Modelling-Assignment-2022-23-Part-2-A-Specification-Spectacular_tmp_tmp4pj4p2zx_car_park/verus_code.rs
+- dafnybench/Clover_insert/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_error_data_completion_06_n/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_C_convert_examples_11/verus_code.rs
+- dafnybench/Clover_has_close_elements/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week8_12_a3 copy 2/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session6Exercises_ExerciseCountMin/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Generated_Code_ComputePower/verus_code.rs
+- dafnybench/Clover_array_copy/verus_code.rs
+- dafnybench/Dafny_tmp_tmpmvs2dmry_pancakesort_findmax/verus_code.rs
+- dafnybench/Dafny_tmp_tmp0wu8wmfr_tests_SumIntsLoop/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week8_12_week10_ExtensibleArray/verus_code.rs
+- dafnybench/FMSE-2022-2023_tmp_tmp6_x_ba46_Lab10_Lab10/verus_code.rs
+- dafnybench/Clover_multi_return/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session6Exercises_ExercisePeekSum/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session4Exercises_ExerciseContained/verus_code.rs
+- dafnybench/CVS-Projto1_tmp_tmpb1o0bu8z_proj1_proj1/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Generated_Code_LinearSearch/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_bql_exampls_SmallNum/verus_code.rs
+- dafnybench/BinarySearchTree_tmp_tmp_bn2twp5_bst4copy/verus_code.rs
+- dafnybench/CVS-handout1_tmp_tmptm52no3k_2/verus_code.rs
+- dafnybench/Dafny-demo_tmp_tmpkgr_dvdi_Dafny_BinarySearch/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week8_12_week8_CheckSumCalculator/verus_code.rs
+- dafnybench/Clover_array_product/verus_code.rs
+- dafnybench/Clover_min_array/verus_code.rs
+- dafnybench/Correctness_tmp_tmpwqvg5q_4_MethodCalls_q1/verus_code.rs
+- dafnybench/Dafny_tmp_tmpmvs2dmry_examples1/verus_code.rs
+- dafnybench/Dafny_tmp_tmpmvs2dmry_pancakesort_flip/verus_code.rs
+- dafnybench/Clover_swap/verus_code.rs
+- dafnybench/Dafny-Practice_tmp_tmphnmt4ovh_BST/verus_code.rs
+- dafnybench/Clover_online_max/verus_code.rs
+- dafnybench/Clover_seq_to_array/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session4Exercises_ExerciseFirstNegative/verus_code.rs
+- dafnybench/CS5232_Project_tmp_tmpai_cfrng_LFUSimple/verus_code.rs
+- dafnybench/Clover_linear_search1/verus_code.rs
+- dafnybench/Clover_min_of_two/verus_code.rs
+- dafnybench/Clover_update_map/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session7Exercises_ExerciseReplace/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session2Exercises_ExerciseFibonacci/verus_code.rs
+- dafnybench/DafnyExercises_tmp_tmpd6qyevja_Part1_Q1/verus_code.rs
+- dafnybench/CS5232_Project_tmp_tmpai_cfrng_test/verus_code.rs
+- dafnybench/DafnyProjects_tmp_tmp2acw_s4s_Graph/verus_code.rs
+- dafnybench/DafnyPrograms_tmp_tmp74_f9k_c_automaton/verus_code.rs
+- dafnybench/Clover_below_zero/verus_code.rs
+- dafnybench/Dafny_tmp_tmpj88zq5zt_2-Kontrakte_reverse3/verus_code.rs
+- dafnybench/Clover_slope_search/verus_code.rs
+- dafnybench/Clover_abs/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_50_examples_SumArray/verus_code.rs
+- dafnybench/Dafny-VMC_tmp_tmpzgqv0i1u_src_Math_Helper/verus_code.rs
+- dafnybench/Dafny_ProgrammingLanguages_tmp_tmp82_e0kji_ExtraCredit/verus_code.rs
+- dafnybench/Clover_quotient/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_bql_exampls_Min/verus_code.rs
+- dafnybench/Clover_max_array/verus_code.rs
+- dafnybench/Clover_rotate/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_50_examples_28/verus_code.rs
+- dafnybench/DafnyExercises_tmp_tmpd6qyevja_QuickExercises_testing2/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_50_examples_41/verus_code.rs
+- dafnybench/Clover_remove_front/verus_code.rs
+- dafnybench/Dafny_tmp_tmpj88zq5zt_2-Kontrakte_max/verus_code.rs
+- dafnybench/Dafny_tmp_tmp0wu8wmfr_Heimaverkefni 3_InsertionSortMultiset/verus_code.rs
+- dafnybench/Clover_swap_sim/verus_code.rs
+- dafnybench/Clover_reverse/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week8_12_week8_CoffeeMaker2/verus_code.rs
+- dafnybench/Clover_swap_bitvector/verus_code.rs
+- dafnybench/Clover_is_palindrome/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_error_data_completion_07/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_50_examples_BinarySearch/verus_code.rs
+- dafnybench/703FinalProject_tmp_tmpr_10rn4z_DP-GD/verus_code.rs
+- dafnybench/AssertivePrograming_tmp_tmpwf43uz0e_Find_Substring/verus_code.rs
+- dafnybench/Clover_cal_ans/verus_code.rs
+- dafnybench/Clover_array_sum/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_AI_agent_verify_examples_IncrementMatrix/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_AI_agent_verify_examples_DoubleArray/verus_code.rs
+- dafnybench/Clover_double_quadruple/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week8_12_week10_BoundedQueue_01/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_normal_data_completion_MaxPerdV2/verus_code.rs
+- dafnybench/Clover_triple2/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session3Exercises_ExerciseMaximum/verus_code.rs
+- dafnybench/Dafny_Learning_Experience_tmp_tmpuxvcet_u_week8_12_week9_lemma/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Generated_Code_Minimum/verus_code.rs
+- dafnybench/Clover_swap_arith/verus_code.rs
+- dafnybench/Clover_longest_prefix/verus_code.rs
+- dafnybench/Clover_triple4/verus_code.rs
+- dafnybench/Dafny-experiences_tmp_tmp150sm9qy_dafny_started_tutorial_dafny_tutorial_array/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session4Exercises_ExercisefirstZero/verus_code.rs
+- dafnybench/DafnyProjects_tmp_tmp2acw_s4s_RawSort/verus_code.rs
+- dafnybench/DafnyPrograms_tmp_tmp74_f9k_c_map-multiset-implementation/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_Fine_Tune_Examples_50_examples_37/verus_code.rs
+- dafnybench/DafnyPrograms_tmp_tmp74_f9k_c_invertarray/verus_code.rs
+- dafnybench/Clover_array_concat/verus_code.rs
+- dafnybench/Clover_set_to_seq/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session9Exercises_ExerciseSeqMaxSum/verus_code.rs
+- dafnybench/Clover_replace/verus_code.rs
+- dafnybench/Dafny-Exercises_tmp_tmpjm75muf__Session7Exercises_ExerciseBinarySearch/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_C_convert_examples_23_x/verus_code.rs
+- dafnybench/Dafny_Programs_tmp_tmp99966ew4_lemma/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_AI_agent_verify_examples_RotateRight/verus_code.rs
+- dafnybench/Dafny-Projects_tmp_tmph399drhy_p2_arraySplit/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_AI_agent_validation_examples/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_C_convert_examples_01/verus_code.rs
+- dafnybench/Dafny_Verify_tmp_tmphq7j0row_dataset_C_convert_examples_07/verus_code.rs
+
+## Next Steps:
+
+These files need manual review and fixing before they can be used for Verus proof synthesis.
+The detailed error messages are available in `verus_compilation_failures.txt`.
+
+Generated on: 121 files moved from benchmarks_no_bodies/

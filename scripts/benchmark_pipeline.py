@@ -12,6 +12,7 @@ import argparse
 import subprocess
 from pathlib import Path
 from datetime import datetime
+from verus_config import get_config
 
 def run_command(cmd, description):
     """Run a command and handle errors."""
@@ -31,6 +32,9 @@ def run_command(cmd, description):
         return False
 
 def main():
+    # Load configuration
+    config = get_config()
+    
     parser = argparse.ArgumentParser(
         description="Complete pipeline for generating Verus benchmarks from source files.",
         epilog="""
@@ -42,16 +46,42 @@ Examples:
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     
-    parser.add_argument("source_dir", help="Source directory containing Verus files")
-    parser.add_argument("--output", help="Output directory for processed files (default: <source_dir>_no_bodies_<timestamp>)")
+    parser.add_argument("source_dir", nargs="?", help="Source directory containing Verus files")
+    parser.add_argument("--output", 
+                       default=config.get_string("DEFAULT_OUTPUT_DIR"),
+                       help="Output directory for processed files (default: <source_dir>_no_bodies_<timestamp> or from config)")
     parser.add_argument("--verus-path", 
-                       default=os.path.expanduser("~/Downloads/verus-0.2025.07.15.62362b0-x86-linux/verus-x86-linux/./verus"),
-                       help="Path to Verus executable")
-    parser.add_argument("--skip-move", action="store_true", help="Skip moving failed files to separate directory")
-    parser.add_argument("--skip-summary", action="store_true", help="Skip generating final summary")
-    parser.add_argument("--no-timestamp", action="store_true", help="Skip adding timestamp to generated folder names")
+                       default=config.get_verus_path(),
+                       help=f"Path to Verus executable (default: from config or {config.get_verus_path()})")
+    parser.add_argument("--skip-move", 
+                       action="store_true",
+                       default=config.get_bool("SKIP_MOVE_FAILED"),
+                       help="Skip moving failed files to separate directory")
+    parser.add_argument("--skip-summary", 
+                       action="store_true",
+                       default=config.get_bool("SKIP_SUMMARY"),
+                       help="Skip generating final summary")
+    parser.add_argument("--no-timestamp", 
+                       action="store_true",
+                       default=config.get_bool("NO_TIMESTAMP"),
+                       help="Skip adding timestamp to generated folder names")
+    parser.add_argument("--config", help="Show current configuration and exit", action="store_true")
     
     args = parser.parse_args()
+    
+    # Show configuration if requested
+    if args.config:
+        config.print_config()
+        return
+    
+    # Require source_dir if not just showing config
+    if not args.source_dir:
+        parser.error("source_dir is required (unless using --config)")
+        return
+    
+    # Validate Verus path
+    if not config.validate_verus_path(args.verus_path):
+        sys.exit(1)
     
     # Generate timestamp if needed
     timestamp = "" if args.no_timestamp else f"_{datetime.now().strftime('%Y%m%d_%H%M%S')}"

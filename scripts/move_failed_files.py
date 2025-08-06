@@ -45,9 +45,9 @@ def main():
     # Create the failed directory if it doesn't exist
     failed_dir.mkdir(exist_ok=True)
     
-    # Read the list of failed files
+    # Read the list of failed files (skip comment lines starting with #)
     with open(failed_files_list, 'r') as f:
-        failed_files = [line.strip() for line in f if line.strip()]
+        failed_files = [line.strip() for line in f if line.strip() and not line.strip().startswith('#')]
     
     print(f"Moving failed files from {source_dir} to {failed_dir}")
     print(f"Found {len(failed_files)} failed files to move...")
@@ -60,6 +60,7 @@ def main():
         source_file = source_dir / relative_path
         target_file = failed_dir / relative_path
         
+        # Check if file exists at the expected path
         if source_file.exists():
             # Create target directory if it doesn't exist
             target_file.parent.mkdir(parents=True, exist_ok=True)
@@ -69,8 +70,23 @@ def main():
             print(f"Moved: {relative_path}")
             moved_count += 1
         else:
-            print(f"Not found: {relative_path}")
-            not_found_count += 1
+            # Try to find the file in subdirectories (e.g., artifacts/)
+            found = False
+            for possible_path in source_dir.rglob(relative_path):
+                if possible_path.is_file():
+                    # Create target directory if it doesn't exist
+                    target_file.parent.mkdir(parents=True, exist_ok=True)
+                    
+                    # Move the file
+                    shutil.move(str(possible_path), str(target_file))
+                    print(f"Moved: {relative_path} (found at {possible_path.relative_to(source_dir)})")
+                    moved_count += 1
+                    found = True
+                    break
+            
+            if not found:
+                print(f"Not found: {relative_path}")
+                not_found_count += 1
     
     print("-" * 60)
     print(f"SUMMARY:")

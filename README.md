@@ -1,7 +1,28 @@
 # Verus Benchmark Analysis & Generation Tools
 
-A comprehensive toolkit for analyzing Verus verification benchmarks and generating specification-only benchmarks by processing existing Verus codebases. This project provides scripts to systematically analyze code similarity, detect duplicates, remove function bodies while preserving specifications, and create datasets for verification research.
+A comprehensive toolkit for analyzing Verus verification benchmarks and generating specification-only benchmarks by processing existing Verus codebases. This project provides scripts to systemaGenerates comprehensive statistics by combining results from all similarity analysis tools.
 
+**Usage:**
+```bash
+cd scripts
+python3 analyze_code_similarity_stats.py
+``` analyze code similarity, detect duplicates, remove function bodies while preserving specifications, and create datasets for verifica### Similarity Analysis Parameters
+
+Fine-tune analysis with different thresholds:
+
+```bash
+cd scripts
+
+# Conservative similarity (high precision)
+python3 analyze_function_similarity_optimized.py ../benches 0.9 8
+
+# Liberal similarity (high recall)
+python3 analyze_function_similarity_optimized.py ../benches 0.7 8
+
+# File-level analysis with different approaches
+python3 find_similar_files_cosine.py --threshold 0.7 --json cosine_results.json
+python3 find_similar_files_jaccard.py --threshold 0.5 --json jaccard_results.json
+```
 ## Overview
 
 This repository contains a collection of Python scripts designed to analyze and transform Verus programs. The toolkit serves multiple purposes:
@@ -53,39 +74,77 @@ This repository contains a collection of Python scripts designed to analyze and 
 
 ### Prerequisites
 
-- Python 3.6 or higher
+- Python 3.6 or higher  
 - Verus executable installed and accessible (for benchmark generation)
 - Source directory with Verus (.rs) files
+
+### Setup
+
+1. **Configure Verus Path**: Create a `.env` file to set up your environment
+   ```bash
+   cp .env.example .env
+   # Edit .env to set VERUS_PATH=/path/to/your/verus/executable
+   ```
+
+2. **Verify Configuration**: Test that everything is set up correctly
+   ```bash
+   cd scripts
+   python3 verus_config.py --validate
+   ```
+
+### Important: Working Directory
+
+**All scripts must be run from the `scripts` directory** due to internal dependencies and file path expectations:
+
+```bash
+cd scripts
+python3 benchmark_pipeline.py /path/to/verus/source
+```
+
+This is required because:
+- Scripts call other Python scripts without path prefixes
+- Generated files (like `failed_files_list.txt`) are expected in the current directory
+- The pipeline orchestrates multiple tools that depend on being in the scripts directory
 
 ### Analysis Tools
 
 ```bash
+# Change to scripts directory first
+cd scripts
+
 # Analyze function similarity across files
-python3 scripts/analyze_function_similarity_optimized.py benches 0.8 8
+python3 analyze_function_similarity_optimized.py ../benches 0.8 8
 
 # Find duplicate files by content
-python3 scripts/analyze_duplicates.py
+python3 analyze_duplicates.py
 
 # Find similar files using cosine similarity
-python3 scripts/find_similar_files_cosine.py --directory benches --threshold 0.5
+python3 find_similar_files_cosine.py --directory ../benches --threshold 0.5
 
 # Find similar files using Jaccard similarity
-python3 scripts/find_similar_files_jaccard.py --directory benches --threshold 0.3
+python3 find_similar_files_jaccard.py --directory ../benches --threshold 0.3
 
 # Generate comprehensive similarity statistics
-python3 scripts/analyze_code_similarity_stats.py
+python3 analyze_code_similarity_stats.py
 ```
 
 ### Benchmark Generation
 
 ```bash
-# Run the complete pipeline on a directory of Verus files
-python3 scripts/benchmark_pipeline.py /path/to/verus/source
+# Change to scripts directory first
+cd scripts
 
-# With custom output directory and Verus path
-python3 scripts/benchmark_pipeline.py benchmarks \
-  --output benchmarks_processed \
-  --verus-path /usr/local/bin/verus
+# Run the complete pipeline (uses .env configuration)
+python3 benchmark_pipeline.py /path/to/verus/source
+
+# View current configuration
+python3 benchmark_pipeline.py --config
+
+# Override configuration with command-line options
+python3 benchmark_pipeline.py ../benchmarks \
+  --output ../benchmarks_processed \
+  --verus-path /usr/local/bin/verus \
+  --timeout 45
 ```
 
 ### Output Structure
@@ -120,7 +179,8 @@ Multi-threaded analysis to find similar functions across different files using t
 
 **Usage:**
 ```bash
-python3 scripts/analyze_function_similarity_optimized.py <directory> [threshold] [num_processes]
+cd scripts
+python3 analyze_function_similarity_optimized.py <directory> [threshold] [num_processes]
 ```
 
 **Features:**
@@ -131,7 +191,8 @@ python3 scripts/analyze_function_similarity_optimized.py <directory> [threshold]
 
 **Example:**
 ```bash
-python3 scripts/analyze_function_similarity_optimized.py benches 0.8 8
+cd scripts
+python3 analyze_function_similarity_optimized.py ../benches 0.8 8
 ```
 
 ### `analyze_duplicates.py` - Content-Based Duplicate Detection
@@ -140,7 +201,8 @@ Finds files with identical content using MD5 hashing and categorizes duplicate p
 
 **Usage:**
 ```bash
-python3 scripts/analyze_duplicates.py
+cd scripts
+python3 analyze_duplicates.py
 ```
 
 **Features:**
@@ -155,7 +217,8 @@ File-level similarity analysis using cosine similarity on token frequency vector
 
 **Usage:**
 ```bash
-python3 scripts/find_similar_files_cosine.py --directory <dir> --threshold <threshold>
+cd scripts
+python3 find_similar_files_cosine.py --directory <dir> --threshold <threshold>
 ```
 
 **Options:**
@@ -170,7 +233,8 @@ File-level similarity analysis using Jaccard similarity on token sets.
 
 **Usage:**
 ```bash
-python3 scripts/find_similar_files_jaccard.py --directory <dir> --threshold <threshold>
+cd scripts
+python3 find_similar_files_jaccard.py --directory <dir> --threshold <threshold>
 ```
 
 **Features:**
@@ -200,9 +264,12 @@ python3 scripts/analyze_code_similarity_stats.py
 
 The complete orchestration script that runs all processing steps in sequence.
 
+**Important**: Must be run from the `scripts` directory:
+
 **Usage:**
 ```bash
-python3 scripts/benchmark_pipeline.py <source_directory> [options]
+cd scripts
+python3 benchmark_pipeline.py <source_directory> [options]
 ```
 
 **Options:**
@@ -213,8 +280,9 @@ python3 scripts/benchmark_pipeline.py <source_directory> [options]
 
 **Example:**
 ```bash
-python3 scripts/benchmark_pipeline.py my_verus_project \
-  --output benchmarks \
+cd scripts
+python3 benchmark_pipeline.py ../my_verus_project \
+  --output ../benchmarks \
   --verus-path ~/tools/verus/verus
 ```
 
@@ -230,7 +298,8 @@ Removes function implementations while preserving specifications and signatures.
 
 **Usage:**
 ```bash
-python3 scripts/remove_function_bodies.py <input_directory> [output_directory]
+cd scripts
+python3 remove_function_bodies.py <input_directory> [output_directory]
 ```
 
 ### `test_verus_compilation.py` - Verification
@@ -245,7 +314,8 @@ Tests all processed files for compilation using `verus --no-verify`.
 
 **Usage:**
 ```bash
-python3 scripts/test_verus_compilation.py <directory> [verus_path]
+cd scripts
+python3 test_verus_compilation.py <directory> [verus_path]
 ```
 
 ### `move_failed_files.py` - Organization
@@ -254,7 +324,8 @@ Moves files that failed compilation to a separate directory for analysis.
 
 **Usage:**
 ```bash
-python3 scripts/move_failed_files.py <source_directory> [failed_directory]
+cd scripts
+python3 move_failed_files.py <source_directory> [failed_directory]
 ```
 
 ### `project_summary.py` - Reporting
@@ -263,7 +334,8 @@ Generates comprehensive statistics about the processing results.
 
 **Usage:**
 ```bash
-python3 scripts/project_summary.py <source_dir> <working_dir> <failed_dir>
+cd scripts
+python3 project_summary.py <source_dir> <working_dir> <failed_dir>
 ```
 
 ## Advanced Usage
@@ -273,21 +345,24 @@ python3 scripts/project_summary.py <source_dir> <working_dir> <failed_dir>
 For a complete analysis of your benchmark suite:
 
 ```bash
+# Change to scripts directory first
+cd scripts
+
 # Step 1: Analyze function-level similarities
-python3 scripts/analyze_function_similarity_optimized.py benches 0.8 8
+python3 analyze_function_similarity_optimized.py ../benches 0.8 8
 
 # Step 2: Generate statistical analysis
-python3 scripts/analyze_code_similarity_stats.py
+python3 analyze_code_similarity_stats.py
 
 # Step 3: Find file-level similarities (multiple approaches)
-python3 scripts/find_similar_files_cosine.py --directory benches --threshold 0.5
-python3 scripts/find_similar_files_jaccard.py --directory benches --threshold 0.3
+python3 find_similar_files_cosine.py --directory ../benches --threshold 0.5
+python3 find_similar_files_jaccard.py --directory ../benches --threshold 0.3
 
 # Step 4: Detect content-based duplicates
-python3 scripts/analyze_duplicates.py
+python3 analyze_duplicates.py
 
 # Step 5: Generate removal plan (if needed)
-python3 scripts/find_removable_duplicates.py
+python3 find_removable_duplicates.py
 ```
 
 ### Custom Processing Workflow
@@ -295,29 +370,33 @@ python3 scripts/find_removable_duplicates.py
 You can run individual benchmark generation scripts for more control:
 
 ```bash
+# Change to scripts directory first
+cd scripts
+
 # Step 1: Remove function bodies
-python3 scripts/remove_function_bodies.py source_files output_files
+python3 remove_function_bodies.py ../source_files ../output_files
 
 # Step 2: Test compilation
-python3 scripts/test_verus_compilation.py output_files /path/to/verus
+python3 test_verus_compilation.py ../output_files /path/to/verus
 
 # Step 3: Organize failed files
-python3 scripts/move_failed_files.py output_files output_files_failed
+python3 move_failed_files.py ../output_files ../output_files_failed
 
 # Step 4: Generate summary
-python3 scripts/project_summary.py source_files output_files output_files_failed
+python3 project_summary.py ../source_files ../output_files ../output_files_failed
 ```
 
 ### Batch Processing Multiple Projects
 
 ```bash
 #!/bin/bash
-for project in project1 project2 project3; do
+cd scripts  # Make sure we're in the scripts directory
+for project in ../project1 ../project2 ../project3; do
     echo "Processing $project..."
-    python3 scripts/benchmark_pipeline.py "$project" --output "${project}_specs"
+    python3 benchmark_pipeline.py "$project" --output "${project}_specs"
     
     echo "Analyzing $project for similarities..."
-    python3 scripts/analyze_function_similarity_optimized.py "${project}_specs"
+    python3 analyze_function_similarity_optimized.py "${project}_specs"
 done
 ```
 
@@ -326,15 +405,17 @@ done
 Fine-tune analysis with different thresholds:
 
 ```bash
+cd scripts
+
 # Conservative similarity (high precision)
-python3 scripts/analyze_function_similarity_optimized.py benches 0.9 8
+python3 analyze_function_similarity_optimized.py ../benches 0.9 8
 
 # Liberal similarity (high recall)
-python3 scripts/analyze_function_similarity_optimized.py benches 0.7 8
+python3 analyze_function_similarity_optimized.py ../benches 0.7 8
 
-# File-level analysis with different thresholds
-python3 scripts/find_similar_files_cosine.py --threshold 0.7 --json cosine_results.json
-python3 scripts/find_similar_files_jaccard.py --threshold 0.5 --json jaccard_results.json
+# File-level analysis with different approaches
+python3 find_similar_files_cosine.py --threshold 0.7 --json cosine_results.json
+python3 find_similar_files_jaccard.py --threshold 0.5 --json jaccard_results.json
 ```
 
 ## Example Transformation
@@ -359,113 +440,101 @@ fn factorial(n: u32) -> u32
     requires n <= 10
     ensures result == spec_factorial(n)
 {
-    arbitrary()
+    return 0;
 }
 ```
 
 ## Configuration
 
-### Default Verus Path
-The scripts use this default Verus path:
+### Environment-Based Configuration
+
+The tools now support configuration through environment files (`.env`) for convenient setup:
+
+#### 1. Create a Configuration File
+
+Copy the example configuration file:
+```bash
+cp .env.example .env
 ```
-~/Downloads/verus-0.2025.07.15.62362b0-x86-linux/verus-x86-linux/./verus
+
+#### 2. Edit Configuration
+
+Edit `.env` to match your setup:
+```bash
+# Verus Configuration Environment Variables
+VERUS_PATH=~/Downloads/verus-0.2025.07.15.62362b0-x86-linux/verus-x86-linux/./verus
+VERUS_TIMEOUT=30
+VERUS_RANDOM_TIMEOUT=60
+VERUS_EXTRA_ARGS=
+DEFAULT_OUTPUT_DIR=
+SKIP_MOVE_FAILED=false
+SKIP_SUMMARY=false
+NO_TIMESTAMP=false
 ```
 
-Update the path using the `--verus-path` option or modify the default in the scripts.
+#### 3. Configuration Priority
 
-### Timeout Settings
-Compilation testing uses a 30-second timeout per file. Modify `timeout=30` in `test_verus_compilation.py` if needed.
+Configuration is loaded in this order (highest to lowest priority):
+1. Command line arguments (`--verus-path`, `--timeout`, etc.)
+2. System environment variables (`VERUS_PATH`, etc.)
+3. `.env.local` file (for local overrides, not tracked in git)
+4. `.env` file (main configuration)
+5. Built-in defaults
 
-## Troubleshooting
+#### 4. View Current Configuration
 
-### Common Issues
+```bash
+cd scripts
 
-1. **Verus executable not found**
-   ```
-   Error: Verus executable not found at /path/to/verus
-   ```
-   **Solution**: Use `--verus-path` to specify correct Verus location
+# View configuration for any script
+python3 benchmark_pipeline.py --config
+python3 test_verus_compilation.py --config
+python3 run_verus_random_file.py --config
 
-2. **No .rs files found**
-   ```
-   No .rs files found in directory
-   ```
-   **Solution**: Ensure the source directory contains Rust/Verus files
+# Test configuration directly
+python3 verus_config.py --validate
+```
 
-3. **Permission errors**
-   ```
-   Permission denied when creating directories
-   ```
-   **Solution**: Ensure write permissions for output directories
+### Configuration Options
 
-4. **Analysis taking too long**
-   ```
-   Function similarity analysis running for hours
-   ```
-   **Solution**: Use the optimized version with parallel processing:
-   ```bash
-   python3 scripts/analyze_function_similarity_optimized.py benches 0.8 8
-   ```
+| Option | Environment Variable | Default | Description |
+|--------|---------------------|---------|-------------|
+| Verus Path | `VERUS_PATH` | `~/Downloads/verus-...` | Path to Verus executable |
+| Compilation Timeout | `VERUS_TIMEOUT` | 30 | Timeout per file (seconds) |
+| Random Test Timeout | `VERUS_RANDOM_TIMEOUT` | 60 | Timeout for random testing (seconds) |
+| Extra Arguments | `VERUS_EXTRA_ARGS` | *(empty)* | Additional Verus command line args |
+| Default Output Dir | `DEFAULT_OUTPUT_DIR` | *(auto)* | Default output directory |
+| Skip Move Failed | `SKIP_MOVE_FAILED` | false | Skip moving failed files |
+| Skip Summary | `SKIP_SUMMARY` | false | Skip generating summary reports |
+| No Timestamp | `NO_TIMESTAMP` | false | Skip timestamps in folder names |
 
-5. **Memory issues with large codebases**
-   ```
-   MemoryError or system slowdown during analysis
-   ```
-   **Solution**: 
-   - Reduce the number of processes: `python3 script.py benches 0.8 2`
-   - Increase similarity threshold to reduce comparisons: `0.85` instead of `0.8`
-   - Process subdirectories separately
+### Legacy Configuration
 
-6. **Missing analysis dependencies**
-   ```
-   ImportError: No module named 'multiprocessing'
-   ```
-   **Solution**: Ensure Python 3.6+ is being used
+You can still use command-line arguments to override any setting:
+
+```bash
+cd scripts
+
+# Override Verus path
+python3 benchmark_pipeline.py ../benchmarks --verus-path /custom/path/to/verus
+
+# Override timeout
+python3 test_verus_compilation.py ../benchmarks_no_bodies --timeout 60
+```
 
 ### Debug Mode
 
 For verbose output during processing:
 ```bash
-python3 -u scripts/benchmark_pipeline.py source_dir 2>&1 | tee processing.log
+cd scripts
+python3 -u benchmark_pipeline.py ../source_dir 2>&1 | tee processing.log
 ```
 
 For analysis debugging:
 ```bash
-python3 -u scripts/analyze_function_similarity_optimized.py benches 0.8 4 2>&1 | tee analysis.log
+cd scripts
+python3 -u analyze_function_similarity_optimized.py ../benches 0.8 4 2>&1 | tee analysis.log
 ```
-
-### Performance Tips
-
-1. **Use parallel processing**: Always specify the number of processes for large datasets
-2. **Adjust thresholds**: Higher similarity thresholds (0.85-0.9) reduce computation time
-3. **Target specific directories**: Analyze subdirectories separately for better control
-4. **Monitor memory usage**: Use `htop` or `top` to monitor system resources during analysis
-
-## Contributing
-
-This toolkit is designed for research and development in Verus verification and benchmark analysis. Contributions welcome for:
-
-### Analysis Tools
-- Additional similarity metrics and algorithms
-- Support for other programming languages beyond Rust/Verus
-- Enhanced clustering and pattern detection
-- Performance optimizations for large codebases
-
-### Benchmark Generation
-- Enhanced parsing for complex Verus constructs
-- Additional specification preservation features
-- Support for more Rust/Verus language features
-- Better error handling and recovery
-
-### General Improvements
-- Extended reporting formats (HTML, CSV, etc.)
-- Integration with CI/CD pipelines
-- Visualization tools for similarity analysis
-- Database storage for large-scale analysis results
-
-## License
-
-This project is provided as-is for research and educational purposes. Please respect any licensing terms of Verus and associated tools when using this toolkit.
 
 ## Project Structure
 
@@ -493,22 +562,3 @@ This project is provided as-is for research and educational purposes. Please res
 └── README.md                         # This file
 ```
 
-## Analysis Reports Generated
-
-The toolkit generates comprehensive reports in multiple formats:
-
-- **Human-readable Markdown**: Detailed analysis with tables and summaries
-- **JSON format**: Machine-readable results for further processing
-- **CSV files**: Statistical data for spreadsheet analysis
-- **Shell scripts**: Automated cleanup recommendations
-
-## Related Projects
-
-- [Verus](https://github.com/verus-lang/verus) - The Verus verification language
-- [Rust](https://www.rust-lang.org/) - The Rust programming language
-- [HumanEval](https://github.com/openai/human-eval) - Code generation benchmark
-- [MBPP](https://github.com/google-research/google-research/tree/master/mbpp) - Python programming benchmark
-
----
-
-*This toolkit was developed to support verification research, benchmark analysis, and Verus ecosystem development. The analysis tools are language-agnostic and can be adapted for other programming languages. For questions or contributions, please refer to the project's issue tracker.*

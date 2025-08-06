@@ -1,0 +1,85 @@
+name: Verus Sanity Check
+
+on:
+  push:
+    paths:
+      - 'benches_no_bodies_*/**'
+  pull_request:
+    paths:
+      - 'benches_no_bodies_*/**'
+
+jobs:
+  verus-sanity-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install Verus
+        run: |
+          # Download and install Verus
+          curl -L https://github.com/verus-lang/verus/releases/latest/download/verus-linux -o verus
+          chmod +x verus
+          sudo mv verus /usr/local/bin/
+      
+      - name: Detect new benches_no_bodies folders
+        id: detect-folders
+        run: |
+          # Get list of changed files based on event type
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            # For PRs, compare against the base branch
+            git diff --name-only origin/${{ github.base_ref }}...HEAD > changed_files.txt
+          else
+            # For pushes, compare against the previous commit
+            if [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+              git diff --name-only ${{ github.event.before }}...HEAD > changed_files.txt
+            else
+              # For initial commits or when before is null, get all files
+              git ls-files > changed_files.txt
+            fi
+          fi
+          
+          # Find new benches_no_bodies_* folders, excluding those ending with _failed
+          new_folders=$(grep -E '^benches_no_bodies_[0-9]+_[0-9]+/' changed_files.txt | cut -d'/' -f1 | grep -v '_failed$' | sort -u || true)
+          
+          if [ -z "$new_folders" ]; then
+            echo "No new benches_no_bodies folders detected (excluding _failed folders)"
+            echo "folders=" >> $GITHUB_OUTPUT
+          else
+            echo "New folders detected: $new_folders"
+            echo "folders=$new_folders" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Run Verus sanity check
+        if: steps.detect-folders.outputs.folders != ''
+        run: |
+          folders="${{ steps.detect-folders.outputs.folders }}"
+          
+          for folder in $folders; do
+            if [ -d "$folder" ]; then
+              echo "Running sanity check on folder: $folder"
+              echo "========================================"
+              
+              # Run the script on 10 random files from the folder
+              python scripts/run_verus_random_file.py "$folder" --count 10 --seed 42
+              
+              echo ""
+              echo "========================================"
+            else
+              echo "Warning: Folder $folder not found"
+            fi
+          done
+      
+      - name: Check for compilation failures
+        if: steps.detect-folders.outputs.folders != ''
+        run: |
+          # This step will fail the workflow if the previous step had non-zero exit code
+          echo "Sanity check completed. If you see this message, the basic compilation check passed."
