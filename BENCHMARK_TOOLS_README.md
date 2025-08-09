@@ -5,11 +5,18 @@ This directory contains a set of Python scripts for generating Verus benchmarks 
 ## Scripts Overview
 
 ### 1. `remove_function_bodies.py`
-Removes function bodies from Verus files and inserts appropriate default return values.
+Removes function bodies from Verus files while preserving specifications. Handles different function types appropriately:
+- **Regular functions**: Inserts appropriate default return values
+- **Proof functions**: Replaces bodies with `assume(false)` statements  
+- **Spec functions**: Preserves bodies (spec functions need their definitions)
 
 **Usage:**
 ```bash
+# Process directory
 python3 remove_function_bodies.py <input_directory> [output_directory]
+
+# Process single file
+python3 remove_function_bodies.py <input_file.rs> [output_file.rs]
 ```
 
 **Examples:**
@@ -19,6 +26,9 @@ python3 remove_function_bodies.py benchmarks
 
 # Process custom directory with custom output
 python3 remove_function_bodies.py my_verus_files my_output_files
+
+# Process single file
+python3 remove_function_bodies.py example.rs example_no_bodies.rs
 ```
 
 ### 2. `test_verus_compilation.py`

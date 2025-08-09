@@ -1,0 +1,30 @@
+use vstd::prelude::*;
+
+verus! {
+
+spec fn multiple_returns_precond(x: int, y: int) -> bool {
+    true
+}
+
+spec fn multiple_returns_postcond(x: int, y: int, result: (int, int)) -> bool {
+    result.0 == x + y && result.1 + y == x
+}
+
+// Using mathematical integers to match the Lean version more closely
+fn multiple_returns_spec(x: int, y: int) -> (r: (int, int))
+    requires multiple_returns_precond(x, y)
+    ensures multiple_returns_postcond(x, y, r)
+{
+    return 0;  // TODO: Remove this line and implement the function body
+}
+
+proof fn multiple_returns_spec_satisfied(x: int, y: int)
+    requires multiple_returns_precond(x, y)
+    ensures multiple_returns_postcond(x, y, (x + y, x - y))
+{
+    assume(false);  // TODO: Remove this line and implement the proof
+}
+
+} // verus!
+
+fn main() {}
