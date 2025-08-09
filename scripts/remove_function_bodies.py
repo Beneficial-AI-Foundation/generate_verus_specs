@@ -2,8 +2,15 @@
 """
 Script to create a benchmark by removing function bodies from Verus files.
 Preserves function signatures, requires, ensures, and invariant clauses.
+Handles regular functions, proof functions, and spec functions.
 
-Usage: python3 remove_function_bodies.py <input_directory> [output_directory]
+For regular functions: Replaces bodies with appropriate default return values
+For proof functions: Replaces bodies with assume(false) statements
+For spec functions: Keeps the body intact (spec functions need their definitions)
+
+Usage: 
+  python3 remove_function_bodies.py <input_directory> [output_directory]
+  python3 remove_function_bodies.py <input_file.rs> [output_file.rs]
 """
 
 import os
@@ -17,7 +24,7 @@ def find_function_start(lines, start_idx):
     """Find the start of a function definition."""
     for i in range(start_idx, len(lines)):
         line = lines[i].strip()
-        if line.startswith('fn ') or line.startswith('pub fn '):
+        if line.startswith('fn ') or line.startswith('pub fn ') or line.startswith('proof fn'):
             return i
     return -1
 
@@ -108,9 +115,12 @@ def remove_function_bodies(content):
         line = lines[i].strip()
         
         # Check if this line starts a function
-        if line.startswith('fn ') or line.startswith('pub fn '):
+        if line.startswith('fn ') or line.startswith('pub fn ') or line.startswith('proof fn'):
             # This is a function definition - we need to handle it specially
             func_start = i
+            
+            # Check if this is a proof function
+            is_proof_fn = line.startswith('proof fn')
             
             # Check if this is an empty function body like "fn main() {}"
             current_line = lines[i]
@@ -159,8 +169,13 @@ def remove_function_bodies(content):
             
             # Extract return type and generate appropriate default value
             function_str = '\n'.join(lines[func_start:brace_line + 1])
-            return_type = extract_return_type(function_str)
-            default_value = generate_default_value(return_type)
+            
+            if is_proof_fn:
+                # For proof functions, always use assume(false)
+                default_value = "assume(false);  // TODO: Remove this line and implement the proof"
+            else:
+                return_type = extract_return_type(function_str)
+                default_value = generate_default_value(return_type)
             
             # Add the default return statement or comment
             if default_value.strip().startswith('//'):
@@ -187,8 +202,10 @@ def process_rust_file(input_path, output_path):
         # Remove function bodies
         modified_content = remove_function_bodies(content)
         
-        # Create output directory if it doesn't exist
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        # Create output directory if it doesn't exist (only if there's a directory part)
+        output_dir = os.path.dirname(output_path)
+        if output_dir:
+            os.makedirs(output_dir, exist_ok=True)
         
         # Write the modified content
         with open(output_path, 'w', encoding='utf-8') as f:
@@ -200,19 +217,57 @@ def process_rust_file(input_path, output_path):
         print(f"Error processing {input_path}: {e}")
 
 def main():
-    """Main function to process all Rust files in specified directory."""
+    """Main function to process all Rust files in specified directory or a single file."""
     parser = argparse.ArgumentParser(
-        description="Remove function bodies from Verus files, preserving signatures and specifications.",
-        epilog="Example: python3 remove_function_bodies.py benchmarks benchmarks_no_bodies"
+        description="Remove function bodies from Verus files, preserving signatures and specifications. "
+                   "Handles regular functions (generates default returns), proof functions (uses assume(false)), "
+                   "and spec functions (preserves bodies). Supports both single files and directories.",
+        epilog="Examples:\n"
+               "  python3 remove_function_bodies.py benchmarks benchmarks_no_bodies\n"
+               "  python3 remove_function_bodies.py file.rs output_file.rs\n"
+               "  python3 remove_function_bodies.py benchmarks  # Creates benchmarks_no_bodies",
+        formatter_class=argparse.RawDescriptionHelpFormatter
     )
-    parser.add_argument("input_dir", help="Input directory containing Verus files")
-    parser.add_argument("output_dir", nargs="?", help="Output directory (default: <input_dir>_no_bodies)")
+    parser.add_argument("input_path", help="Input directory or single .rs file")
+    parser.add_argument("output_path", nargs="?", help="Output directory or file (default: <input_path>_no_bodies)")
     
     args = parser.parse_args()
     
-    input_dir = Path(args.input_dir)
-    if args.output_dir:
-        output_dir = Path(args.output_dir)
+    input_path = Path(args.input_path)
+    
+    if not input_path.exists():
+        print(f"Error: Input path '{input_path}' not found!")
+        sys.exit(1)
+    
+    # Handle single file processing
+    if input_path.is_file():
+        if not input_path.name.endswith('.rs'):
+            print(f"Error: Input file '{input_path}' is not a Rust file (.rs)")
+            sys.exit(1)
+        
+        if args.output_path:
+            output_path = Path(args.output_path)
+        else:
+            # Generate default output filename
+            stem = input_path.stem
+            suffix = input_path.suffix
+            output_path = input_path.parent / f"{stem}_no_bodies{suffix}"
+        
+        print(f"Processing single file: {input_path}")
+        print(f"Output file: {output_path}")
+        
+        process_rust_file(input_path, output_path)
+        
+        print(f"\nFile processing complete!")
+        print(f"Input file: {input_path}")
+        print(f"Output file: {output_path}")
+        print("Function bodies have been replaced with appropriate default return values.")
+        return
+    
+    # Handle directory processing
+    input_dir = input_path
+    if args.output_path:
+        output_dir = Path(args.output_path)
     else:
         # Check if input directory already ends with "_no_bodies" to avoid infinite recursion
         input_dir_str = str(input_dir)
@@ -222,10 +277,6 @@ def main():
             output_dir = Path(f"{base_name}_no_bodies")
         else:
             output_dir = Path(f"{input_dir_str}_no_bodies")
-    
-    if not input_dir.exists():
-        print(f"Error: Input directory '{input_dir}' not found!")
-        sys.exit(1)
     
     print(f"Input directory: {input_dir}")
     print(f"Output directory: {output_dir}")

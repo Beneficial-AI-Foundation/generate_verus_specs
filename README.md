@@ -56,7 +56,10 @@ This repository contains a collection of Python scripts designed to analyze and 
 - **Specification preservation**: Keeps `requires`, `ensures`, `invariant` clauses intact
 - **Signature retention**: Maintains function names, parameters, and return types
 - **Smart parsing**: Handles complex nested structures and edge cases
-- **Automatic return value generation**: Creates appropriate stub implementations
+- **Type-aware processing**: Different handling for regular functions, proof functions, and spec functions
+- **Automatic return value generation**: Creates appropriate stub implementations for regular functions
+- **Proof function handling**: Replaces proof bodies with `assume(false)` statements
+- **Spec function preservation**: Keeps spec function bodies intact (they define specifications)
 
 ### ✅ Compilation Verification
 - **Automatic testing**: Validates generated specifications compile with Verus
@@ -288,18 +291,25 @@ python3 benchmark_pipeline.py ../my_verus_project \
 
 ### `remove_function_bodies.py` - Core Processing
 
-Removes function implementations while preserving specifications and signatures.
+Removes function implementations while preserving specifications and signatures. Handles different types of Verus functions appropriately.
 
 **Features:**
 - Preserves `requires`, `ensures`, `invariant` clauses
 - Maintains function signatures and return types
 - Handles nested functions and complex structures
-- Generates appropriate return statements for type consistency
+- **Regular functions**: Generates appropriate return statements for type consistency
+- **Proof functions**: Replaces bodies with `assume(false)` statements
+- **Spec functions**: Preserves bodies (spec functions need their definitions)
+- **Single file or directory processing**: Supports both individual files and batch processing
 
 **Usage:**
 ```bash
 cd scripts
+# Process directory
 python3 remove_function_bodies.py <input_directory> [output_directory]
+
+# Process single file
+python3 remove_function_bodies.py <input_file.rs> [output_file.rs]
 ```
 
 ### `test_verus_compilation.py` - Verification
